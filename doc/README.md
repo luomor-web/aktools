@@ -60,5 +60,6 @@ try:
 finally:
     csvFile.close()
 
+sudo docker run -it yiluxiangbei/aktools --volume="$(pwd)":/zhuzhu bash
 sudo docker run -it yiluxiangbei/aktools python doc/get_code.py
 ```

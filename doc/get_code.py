@@ -5,7 +5,7 @@ print(stock_info_a_code_name_df)
 import csv
  
 # path为输出路径和文件名，newline=''是为了不出现空行
-csvFile = open("/tmp/test.csv", "w+", newline='')
+csvFile = open("./test.csv", "w+", newline='')
 # name为列名
 name = ['code', 'name']
 try:
