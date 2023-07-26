@@ -59,6 +59,8 @@ sudo docker run -it yiluxiangbei/aktools:zhuzhu bash
 sudo docker run -it --volume="$(pwd)":/zhuzhu --rm yiluxiangbei/aktools bash
 sudo docker run -it --volume="$(pwd)":/zhuzhu --rm yiluxiangbei/aktools:zhuzhu bash
 
+python get_code.py
+
 sudo docker run -ti --privileged --volume="$(pwd)":/ejyy -v $(pwd)/root:/root --rm node:14 bash
 
 docker rm `docker ps -a|grep aktools|  awk '{print $1}'`
