@@ -5,12 +5,11 @@ FROM python:3.11-slim-bullseye
 RUN pip install --upgrade pip -i https://mirrors.aliyun.com/pypi/simple/
 
 # 新增 gunicorn 安装，提升并发和并行能力
-RUN pip install --no-cache-dir akshare fastapi uvicorn gunicorn -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com  --upgrade
+RUN pip install --no-cache-dir akshare fastapi uvicorn gunicorn -i https://mirrors.aliyun.com/pypi/simple/ --trusted-host=mirrors.aliyun.com  --upgrade
 RUN pip install --no-cache-dir aktools -i https://pypi.org/simple --upgrade
 
 # 设置工作目录方便启动
 ENV APP_HOME=/usr/local/lib/python3.11/site-packages/aktools
-WORKDIR $APP_HOME
 
-# 默认启动 gunicorn 服务
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "main:app", "-k", "uvicorn.workers.UvicornWorker"]
+WORKDIR /zhuzhu
+

@@ -44,22 +44,14 @@ print(stock_info_sz_name_code)
 stock_info_sh_name_code = ak.stock_info_sh_name_code()
 print(stock_info_sh_name_code)
 # python list to csv
-# import pandas as pd
-import csv
- 
-# path为输出路径和文件名，newline=''是为了不出现空行
-csvFile = open("/tmp/test.csv", "w+", newline='')
-# name为列名
-name = ['code', 'name']
-try:
-    writer = csv.writer(csvFile)
-    writer.writerow(name)
-    # stock_info_a_code_name_df为list类型
-    for i in range(len(stock_info_a_code_name_df)):
-        writer.writerow(stock_info_a_code_name_df[i])
-finally:
-    csvFile.close()
 
-sudo docker run -it yiluxiangbei/aktools --volume="$(pwd)":/zhuzhu bash
-sudo docker run -it yiluxiangbei/aktools python doc/get_code.py
+# sudo docker run -itd -p 8080:8080 yiluxiangbei/aktools
+sudo docker run --name aktools -itd -p 8080:8080 yiluxiangbei/aktools
+
+http://82.157.51.152:8080/
+
+sudo docker build -t yiluxiangbei/aktools:zhuzhu -f docker/Dockerfile .
+sudo docker push yiluxiangbei/aktools:zhuzhu
+
+sudo docker run -it yiluxiangbei/aktools:zhuzhu python
 ```
