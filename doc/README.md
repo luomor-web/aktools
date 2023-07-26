@@ -59,4 +59,6 @@ try:
         writer.writerow(stock_info_a_code_name_df[i])
 finally:
     csvFile.close()
+
+sudo docker run -it yiluxiangbei/aktools python doc/get_code.py
 ```
