@@ -12,6 +12,7 @@ StockList = ak.stock_info_a_code_name()
 #但是stock_zh_a_daily（）函数中，要求代码的格式为“sz000001”，或“sh600001”
 #即必须有sz或者sh作为前序
 #因此，通过for循环对股票代码code进行格式变换
+"""
 for i in range(0, len(StockList)):
     temp = StockList.iloc[i,0]
     if temp[0] == "6":
@@ -21,6 +22,7 @@ for i in range(0, len(StockList)):
     if temp[0] == "3":
         temp = "sz" + temp
     StockList.iloc[i, 0] = temp
+"""
 
 #通过txt形式保存数据，先检测是否存在文件。
 #若存在，则在更新股票列表时，先将原有文件删除，再重建文件。
