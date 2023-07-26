@@ -54,4 +54,9 @@ sudo docker build -t yiluxiangbei/aktools:zhuzhu -f docker/Dockerfile .
 sudo docker push yiluxiangbei/aktools:zhuzhu
 
 sudo docker run -it yiluxiangbei/aktools:zhuzhu python
+sudo docker run -it yiluxiangbei/aktools:zhuzhu bash
+
+sudo docker run -it yiluxiangbei/aktools:zhuzhu --volume="$(pwd)":/zhuzhu bash
+
+sudo docker run -ti --privileged --volume="$(pwd)":/ejyy -v $(pwd)/root:/root --rm node:14 bash
 ```
