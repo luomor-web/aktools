@@ -12,4 +12,3 @@ RUN pip install --no-cache-dir aktools -i https://pypi.org/simple --upgrade
 ENV APP_HOME=/usr/local/lib/python3.11/site-packages/aktools
 
 WORKDIR /zhuzhu
-
